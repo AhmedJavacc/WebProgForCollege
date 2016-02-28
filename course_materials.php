@@ -30,7 +30,7 @@ $sections = $SectionsService->get_all_sections();
             <!-- Button trigger modal -->
             <?php foreach ($sections as $section): ?>
                 <br>
-                <button id=<?php echo '"' . $section->get_button_id() . '"'; ?> type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button id="<?php echo '"' . $section->get_button_id() . '"'; ?>" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     <?php echo $section->get_button_name(); ?> 
                 </button>
                 <br>
