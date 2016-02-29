@@ -13,6 +13,7 @@ class MaterialsService {
         if (!mysql_select_db("project")) {
             throw new Exception("No mvc-crud database found on database server.");
         }
+        mysql_set_charset('utf8');
     }
 
     private function closeDb() {

@@ -17,7 +17,7 @@ class CoursesGateway {
     }
 
     public function select_all_courses() {
-        $courses_rec = mysql_query("SELECT * FROM " . $this->course_table . " 2 ORDER BY course_id;");
+        $courses_rec = mysql_query("SELECT * FROM " . $this->course_table . "  ORDER BY course_id;");
 
         $courses = array();
         while (($obj = mysql_fetch_object($courses_rec)) != NULL) {
