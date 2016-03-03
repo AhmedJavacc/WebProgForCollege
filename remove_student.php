@@ -1,6 +1,6 @@
 <?php
 
-require_once 'service/UsersCoursesController.php';
+include_once 'service/UsersCoursesController.php';
 session_start();
 if (isset($_POST['user_id'])) {
     $student_arr = $_POST['user_id'];

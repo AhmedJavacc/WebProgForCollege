@@ -1,7 +1,7 @@
 <?php
 
-require_once 'function.php';
-require_once 'service/CoursesService.php';
+include_once 'function.php';
+include_once 'service/CoursesService.php';
 
 class CoursesController {
 

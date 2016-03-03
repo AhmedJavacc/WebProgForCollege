@@ -6,7 +6,7 @@
  *  OK I'm using old MySQL driver, so kill me ...
  *  This will do for simple apps but for serious apps you should use PDO.
  */
-require_once 'model/student.php';
+include_once 'model/student.php';
 
 class StudentsGateway {
 

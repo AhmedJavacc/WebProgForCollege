@@ -1,6 +1,6 @@
 <?php
 
-require_once 'service/UsersCoursesController.php';
+include_once 'service/UsersCoursesController.php';
 session_start();
 $course_id = $_POST['course_id'];
 $user_type=$_POST['user_type'];

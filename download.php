@@ -1,6 +1,6 @@
 <?php
 
-$file = $_GET['file'];
+$file = urldecode($_GET['file']);
 
 if (file_exists($file)) {
     header('Content-Description: File Transfer');

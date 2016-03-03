@@ -7,6 +7,14 @@ class constantss {
     public static $user_type_student = 0;
     public static $user_type_instructor = 1;
     public static $user_type_admin = 2;
+//    public static $host = "localhost";
+//    public static $user = "root";
+//    public static $password = "";
+//    public static $database_name = "project";
+    public static $host = "localhost";
+    public static $user = "conan";
+    public static $password = "123";
+    public static $database_name = "conan";
 
 }
 

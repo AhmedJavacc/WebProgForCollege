@@ -7,5 +7,5 @@ session_start();
 
 session_destroy(); 
 
-header("Location:manage_courses.php");
+header("Location:login.php");
 ?>

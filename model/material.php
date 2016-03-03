@@ -1,7 +1,7 @@
 <?php
 
-require_once 'model/section.php';
-require_once 'model/constantss.php';
+include_once 'model/section.php';
+include_once 'model/constantss.php';
 
 class material {
 

@@ -1,17 +1,18 @@
 <?php
 
-require_once 'database_gateway/SectionsGateway.php';
-require_once 'database_gateway/ValidationException.php';
+include_once 'database_gateway/SectionsGateway.php';
+include_once 'model/constantss.php';
+include_once 'database_gateway/ValidationException.php';
 
 class SectionsService {
 
     private $SectionsGateway = NULL;
 
     private function openDb() {
-        if (!mysql_connect("localhost", "root", "")) {
+        if (!mysql_connect(constantss::$host, constantss::$user, constantss::$password)) {
             throw new Exception("Connection to the database server failed!");
         }
-        if (!mysql_select_db("project")) {
+        if (!mysql_select_db(constantss::$database_name)) {
             throw new Exception("No mvc-crud database found on database server.");
         }
         mysql_set_charset('utf8');

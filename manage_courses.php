@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <?php
-require_once 'service/CoursesController.php';
-require_once 'service/UsersCoursesController.php';
-require_once 'model/constantss_ui.php';
+include_once 'function.php';
+include_once 'service/CoursesController.php';
+include_once 'service/UsersCoursesController.php';
+include_once 'model/constantss_ui.php';
+include_once 'model/constantss.php';
 session_start();
 
+if (validate_session_time_out() == 0) {
+
+    header("Location:login.php");
+    exit();
+}
+if ($_SESSION['change_password'] == 0) {
+    header("Location:change_password.php");
+    exit();
+}
+if (un_hash_val($_SESSION['current_user_type']) != constantss::$user_type_admin) {
+    header("Location:main_page.php");
+    exit();
+}
 if (isset($_SESSION['course'])) {
     $hashed_course_id = $_SESSION['course'];
 } else {
@@ -27,7 +42,7 @@ $UsersCoursesController->set_user_type($hashed_user_type);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>instructor</title>
+
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,13 +64,13 @@ $UsersCoursesController->set_user_type($hashed_user_type);
                 <div class="form-group" >
                     <label for="user_type" >   Select User Type: </label>
                     <select class="form-control" name="user_type" id="user_type" >
-                                <?php $UsersCoursesController->list_user_types(); ?>
+                        <?php $UsersCoursesController->list_user_types(); ?>
                     </select>
 
                 </div>
 
                 <div class="form-group">
-                    <label for="textarea">Add students</label>
+                    <label for="textarea">Add Users</label>
                     <textarea id="textarea" name="textarea" class="form-control" rows="5"  ></textarea>
                 </div>
                 <button id="save" type="submit" class="btn btn-primary" >save</button>
